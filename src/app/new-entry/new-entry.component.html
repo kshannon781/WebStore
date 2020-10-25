@@ -1,0 +1,14 @@
+<mat-card>
+    <span>Create new item</span>
+    <form [formGroup]="entryForm" (ngSubmit)="f.form.valid && submit(f)" #f="ngForm" novalidate>
+      <mat-form-field class="new-entry-field" >
+        <input matInput placeholder="Item Name" formControlName="itemName">
+      </mat-form-field>
+      <mat-form-field class="new-entry-field">
+        <input matInput placeholder="Cost" type="number" formControlName="cost">
+      </mat-form-field>
+  
+      <button (click)="showMessage()" mat-raised-button [disabled]="!entryForm.valid">Create new</button>
+      <p *ngIf="btnMessage">Item has been added</p>
+    </form>
+  </mat-card>

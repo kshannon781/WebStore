@@ -1,0 +1,20 @@
+<div class="max">  
+    <label>Select Item to show max price:</label>  
+        <select [formControl]="sampleform.controls['itemName']" (change)="changeEvent($event)">  
+                                 <option value="0">--Select--</option>  
+                                 <option *ngFor="let n of itemNames"  
+                                         value={{n.itemName}}>  
+                                     {{n.itemName}}  
+                                 </option>  
+          </select>  
+    
+
+   
+<ng-container ng-show='result'>
+    <p>
+        <label id="lblName">
+            {{name | currency}}
+        </label>
+    </p>
+</ng-container>
+</div>  

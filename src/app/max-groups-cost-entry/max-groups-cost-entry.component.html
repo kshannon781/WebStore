@@ -1,0 +1,34 @@
+<div class="containter">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+    
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef  mat-sort-header> Id </mat-header-cell>
+          <mat-cell *matCellDef="let element" (click)="showdetails(element)"> {{("00" + element.id).slice(-3)}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="itemName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header > Name </mat-header-cell>
+          <mat-cell *matCellDef="let element" (click)="showdetails(element)"> {{element.itemName}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="cost">
+          <mat-header-cell *matHeaderCellDef  mat-sort-header> Cost </mat-header-cell>
+          <mat-cell *matCellDef="let element" (click)="showdetails(element)" > {{element.cost  | currency }} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"> 
+  </mat-row>
+
+
+</table>  
+  <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[1, 5, 10, 25, 100]" ></mat-paginator>
+  </div>
+  
+    
+    
