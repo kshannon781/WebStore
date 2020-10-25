@@ -7,7 +7,7 @@ import {HttpClient} from '@angular/common/http';
 export class WebStoreService {
 
   private baseUrlLocal = 'http://localhost:8888/api/webstore';
- private baseUrl = 'https://webstoreendpoints20201024213721.azurewebsites.net/api/webstore'
+ private baseUrl = 'https://webstoreendpoints20201024213721.azurewebsites.net/'
   constructor(private http: HttpClient) { }
 
     getEntry(id){
